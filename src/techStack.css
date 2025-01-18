@@ -1,0 +1,52 @@
+.tech-stack {
+    border-radius: 0.5rem;
+    padding: 0 0.3rem;
+    text-align: center;
+}
+
+/* 프론트엔드 */
+.javascript {
+    background-color: yellow;
+    color: black;
+}
+
+.reactJS {
+    background-color: black;
+    color: #61DAFB;
+}
+
+.redux {
+    background-color: purple;
+    color: white;
+}
+
+.threeJS {
+    background-color: black;
+    color: white;
+}
+
+
+/* 백엔드 */
+.java {
+    background-color: #1C8CC8;
+    color: orange;
+}
+
+.nodeJS {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.mySQL {
+    background-color: black;
+    color: orange;
+}
+
+.mySQL > span {
+    color: #12668E;
+}
+
+.oracle {
+    background-color: white;
+    color: red;
+}
