@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three';
 
 let i = 1;
-const MyProjects = ({position}) => {
+const MyFirstProject = ({position}) => {
     const [myPhoto, setMyPhoto] = useState("/assets/images/myPhoto2.jpg");
     const texture = useTexture(myPhoto);
 
@@ -44,21 +44,21 @@ const MyProjects = ({position}) => {
     return (
         <>
             <group position={position}>
-                <group position={[-15, 3.5, 1.5]}>
+                <group position={[-5, 3.5, 0.5]}>
                     <mesh rotation={[0, Math.PI / 2, 0]}>
                         <boxGeometry args={[10, 7, 0.1]} />    
                         {/* <meshStandardMaterial map={texture} color="#ffffff" /> */}
                         <meshStandardMaterial map={texture} />
                     </mesh>
                 </group>
-                <group position={[-10, 3.5, -3.5]}>
+                <group position={[0, 3.5, -4.5]}>
                     <mesh>
                         <boxGeometry args={[10, 7, 0.1]} />    
                         {/* <meshStandardMaterial map={texture} color="#ffffff" /> */}
                         <meshStandardMaterial map={videoTexture} />
                     </mesh>
                 </group>
-                <group position={[-10, 0, 1.5]}>
+                <group position={[0, 0, 0.5]}>
                     <mesh>
                         <boxGeometry args={[10, 0.5, 10]} />
                         <meshStandardMaterial color={"#D4D0B8"} />
@@ -104,4 +104,4 @@ const MyProjects = ({position}) => {
     )
 }
 
-export default MyProjects
+export default MyFirstProject

@@ -1,35 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
-import SideContent from '../layout/SideContent';
 import { useSelector } from 'react-redux';
+import ProjectYuhanWeb from '../layout/ProjectYuhanWeb';
 
 const CanvasLayout = ({children}) => {
-    const sideContentState = useSelector((state) => state.sideContent).sideContentState;
-    console.log(sideContentState);
+    const sideContent = useSelector((state) => state.sideContent);
+    // console.log(sideContent);
+
+    if (!sideContent) return null;
+
     return (
         <Container>
             {children}
-            {/* <>
+            <> 
                 {
-                    <SideContentContainer className={sideContentState ? "opened" : "closed"}>
-                        <SideContent />
+                    <SideContentContainer className={sideContent.sideContentState ? "opened" : "closed"}>
+                        {
+                            sideContent.sideContentName === "유한대학교홍보웹" && (
+                                <ProjectYuhanWeb title={sideContent.sideContentName} />
+                            )
+                        }
                     </SideContentContainer>
                 }
-            </> */}
+            </>
         </Container>
     );
 };
 
 const Container = styled.div`
-  width: 100vw;
-  height: 75vh;
+    width: 100vw;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
 `;
 
 const SideContentContainer = styled.div`
     width: 0%;
     border-radius: 15px 0 0 15px;
-    transition: 0.3s ease-in-out;
-    z-index: 1000;
+    transition: 1s ease-in-out;
+    background-color: var(--sub-color2);
+    overflow-y: auto;
+    padding: 1rem;
+    z-index: 10000;
 
     &.opened {
         display: block;

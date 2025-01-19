@@ -6,6 +6,7 @@ import { easing, geometry } from 'maath';
 import { suspend } from 'suspend-react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { sideContentFirstProject } from '../../redux/actions/actions';
 
 extend(geometry);
 
@@ -40,8 +41,8 @@ const Menu = ({ id, name, author, bg, width = 1, height = 1.61803398875, childre
     const regularFont = suspend(() => regular, []); 
     // regular 폰트를 suspend-react로 비동기 로드
 
-    const handleMenu = () => {
-        dispatch(sideContentFirstProject());
+    const handleMenu = (id) => {
+        if(id === "Yuhan-Interactive-Web") dispatch(sideContentFirstProject());
     }
 
     return (
@@ -73,7 +74,7 @@ const Menu = ({ id, name, author, bg, width = 1, height = 1.61803398875, childre
                 onDoubleClick={(e) => {
                     e.stopPropagation();
                     navigate(`/main-content/${id}`); // React Router 상태를 업데이트
-                    // dispatch(handleMenu());
+                    handleMenu(id);
                 }}
                 onPointerOver={(e) => {
                     e.stopPropagation(); // 이벤트 전파 방지

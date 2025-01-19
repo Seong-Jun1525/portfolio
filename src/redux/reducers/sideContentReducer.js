@@ -1,4 +1,4 @@
-import { SIDE_CONTENT_FIRST_PROJECT } from "../actions/actions"
+import { INIT_SIDE_CONTENT, SIDE_CONTENT_FIRST_PROJECT } from "../actions/actions"
 
 const initialState = {
     sideContentState: false,
@@ -7,6 +7,11 @@ const initialState = {
 
 export function sideContentReducer(state = initialState, action) {
     switch(action.type) {
+        case INIT_SIDE_CONTENT:
+            return {
+                sideContentState: false,
+                sideContentName: ""
+            }
         case SIDE_CONTENT_FIRST_PROJECT:
             return {
                 ...state,
