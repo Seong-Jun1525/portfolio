@@ -41,7 +41,6 @@ const Menu = ({ id, name, author, bg, width = 1, height = 1.61803398875, childre
     // regular 폰트를 suspend-react로 비동기 로드
 
     const handleMenu = () => {
-        navigate(`/main-content/${id}`); // React Router 상태를 업데이트
         dispatch(sideContentFirstProject());
     }
 
@@ -73,7 +72,8 @@ const Menu = ({ id, name, author, bg, width = 1, height = 1.61803398875, childre
                 name={id}
                 onDoubleClick={(e) => {
                     e.stopPropagation();
-                    dispatch(handleMenu());
+                    navigate(`/main-content/${id}`); // React Router 상태를 업데이트
+                    // dispatch(handleMenu());
                 }}
                 onPointerOver={(e) => {
                     e.stopPropagation(); // 이벤트 전파 방지
@@ -94,9 +94,7 @@ const Menu = ({ id, name, author, bg, width = 1, height = 1.61803398875, childre
                     // 양면 렌더링
                 >
                     <color attach="background" args={[bg]} /> 
-                    // 배경색 설정
                     {children} 
-                    // 하위 요소 렌더링
                 </MeshPortalMaterial>
 
             </mesh>

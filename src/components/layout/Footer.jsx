@@ -1,4 +1,5 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faBook } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import styled from 'styled-components'
@@ -7,8 +8,18 @@ const Footer = () => {
     return (
         <FooterContainer>
             <p>
-                &copy; Copyright 2025&nbsp;&nbsp;&nbsp;
-                <a href='https://github.com/Seong-Jun1525'><FontAwesomeIcon icon={faGithub} /> Lim Seong Jun</a>
+                &copy;&nbsp;&nbsp;Copyright&nbsp;&nbsp;2025&nbsp;&nbsp;&nbsp;
+                <a href='https://github.com/Seong-Jun1525' className='hover-css'>
+                    <span>
+                        <FontAwesomeIcon icon={faGithub} /> Lim Seong Jun
+                    </span>
+                </a>
+                <a href='https://github.com/Seong-Jun1525' className='hover-css'>
+                    <span>
+                        <FontAwesomeIcon icon={faBook} /> Blog
+                    </span>
+                </a>
+                All rights reserved.
             </p>
         </FooterContainer>
     )

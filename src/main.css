@@ -1,0 +1,25 @@
+.hover-css > span {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-css > span::after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 0.1rem;
+    background-color: var(--main-color);
+    position: absolute;
+    bottom: -0.2rem; /* 텍스트 아래 여유 공간 */
+    left: 50%; /* 중앙 시작 */
+    transform: translateX(-50%); /* 중앙 정렬 */
+    transition: width 0.3s ease;
+}
+
+.hover-css:hover > span {
+	color: var(--main-color);
+}
+
+.hover-css:hover > span::after {
+    width: 100%; /* hover 시 전체 너비로 확장 */
+}
