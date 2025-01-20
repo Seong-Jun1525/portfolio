@@ -14,7 +14,7 @@ const Footer = () => {
                         <FontAwesomeIcon icon={faGithub} /> Lim Seong Jun
                     </span>
                 </a>
-                <a href='https://github.com/Seong-Jun1525' className='hover-css'>
+                <a href='https://seong-jun.tistory.com' className='hover-css'>
                     <span>
                         <FontAwesomeIcon icon={faBook} /> Blog
                     </span>

@@ -1,4 +1,4 @@
-import { faArrowRightArrowLeft, faClose, faCode, faFile, faFolder, faFolderTree, faLocationArrow, faPen, faStar, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightArrowLeft, faClose, faCode, faFile, faFolder, faFolderTree, faLaptopCode, faLocationArrow, faPen, faServer, faStar, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { useDispatch } from 'react-redux';
@@ -38,6 +38,34 @@ const ProjectYuhanWeb = ({title}) => {
                         <ProjectImage src="../assets/images/project-yuhanweb/키오스크 이벤트.png" alt="키오스크 이벤트" />
                     </ProjectImageItem>
                 </ProjectImageArea>
+                <TechStack>
+                    <div>
+                        <h2><FontAwesomeIcon icon={faCode} />My TechStack</h2>
+                    </div>
+                    <TechStackList>
+                        <li>
+                            <span>Blender</span>
+                        </li>
+                        <li>
+                            <span>JavaScript</span>
+                        </li>
+                        <li>
+                            <span>ReactJS</span>
+                        </li>
+                        <li>
+                            <span>Redux</span>
+                        </li>
+                        <li>
+                            <span>Three.js</span>
+                        </li>
+                        <li>
+                            <span>Node.js</span>
+                        </li>
+                        <li>
+                            <span>MySQL</span>
+                        </li>
+                    </TechStackList>
+                </TechStack>
                 <MyRole>
                     <h3>나의 역할</h3>
                     <MyRoleList>
@@ -125,6 +153,50 @@ const ProjectImage = styled.img`
     border: 0.3rem solid var(--main-color);
     box-sizing: border-box;
     margin-right: 1rem;
+`;
+
+const TechStack = styled.div`
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    div {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    div::after {
+        content: "";
+        padding: 0.1rem;
+        margin-right: 0.5rem;
+        background-color: var(--sub-color);
+    }
+`;
+
+const TechStackList = styled.ul`
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-left: 1.5em;
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1.5rem 1.5rem 0;
+        
+        span {
+            background-color: var(--main-color);
+            color: var(--sub-color);
+            border-radius: 0.5rem;
+            padding: 0 0.5rem;
+        }
+    }
 `;
 
 const MyRole = styled.div`

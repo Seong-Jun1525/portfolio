@@ -383,7 +383,7 @@ const TechStackList = styled.ul`
             }
         }
     }
-`
+`;
 
 const LinkArea = styled.div`
     font-size: 1.5rem;

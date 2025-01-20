@@ -64,39 +64,6 @@ const MyFirstProject = ({position}) => {
                         <meshStandardMaterial color={"#D4D0B8"} />
                     </mesh>
                 </group>
-                {/* <group
-                    position={[-8, 0, -15]}
-                >
-                    <Text3D
-                        font={"./assets/fonts/HakgyoansimWoojuR.json"}
-                        size={1}
-                        height={0.3}
-                        position={[10, 5, 0]}
-                    >
-                        안녕하세요
-                        <meshStandardMaterial color="#4B6382" />
-                    </Text3D>
-                    <Text3D
-                        font={"./assets/fonts/HakgyoansimWoojuR.json"}
-                        size={0.75}
-                        height={0.1}
-                        position={[10, 4, 0]}
-                    >
-
-                        프론트엔드 개발자 임성준입니다.
-                        <meshStandardMaterial color="#4B6382" />
-                    </Text3D>
-                    <Text3D
-                        font={"./assets/fonts/HakgyoansimWoojuR.json"}
-                        size={0.7}
-                        height={0.1}
-                        position={[10, 3, 0]}
-                    >
-
-                        기본에 충실하며 효율적인 코드를 작성하자
-                        <meshStandardMaterial color="#4B6382" />
-                    </Text3D>
-                </group> */}
             </group>
             <ambientLight intensity={2} />
             <pointLight position={[10, 10, 10]} intensity={1} />
