@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAward, faCode, faEnvelopeSquare, faGraduationCap, faIdCard, faLaptopCode, faLocationArrow, faLocationDot, faPencilAlt, faPhoneAlt, faSchool, faServer, faTrophy, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
+import Footer from './layout/Footer';
 
 const AboutMe = () => {
     const navigate = useNavigate();
@@ -138,6 +139,9 @@ const AboutMe = () => {
                     </a>
                 </LinkArea>
             </AboutMeContainer>
+            
+            {/* 항상 표시될 Footer 컴포넌트 */}
+            <Footer />
         </AboutMeWrapper>
     )
 }
@@ -147,7 +151,6 @@ const AboutMeWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 3rem 0;
 `
 
 const AboutMeContainer = styled.div`

@@ -25,8 +25,6 @@ const App = () => {
                             <Route path=":id" element={<MyGoals />} />
                         </Route>
                     </Routes>
-                    {/* 항상 표시될 Footer 컴포넌트 */}
-                    <Footer />
                 </BrowserRouter>
             </Provider>
         </>

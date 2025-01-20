@@ -18,7 +18,7 @@ const ProjectYuhanWeb = ({title}) => {
     return (
         <Container>
             <SideContentHeader>
-                <h2>{title}<FontAwesomeIcon /></h2>
+                <h1>{title}<FontAwesomeIcon /></h1>
                 <small>(대상 <FontAwesomeIcon icon={faTrophy} color='gold' />)</small>
                 <p>24.03 ~ 24.11 4인 팀 프로젝트</p>
                 {/* handleBack()은 즉시 실행. 이벤트 핸들러는 참조형식으로 해야함. handleBack <- 참조형식 */}
@@ -26,7 +26,13 @@ const ProjectYuhanWeb = ({title}) => {
             </SideContentHeader>
             <SideContentMain>
                 <ProjectIntro>
-                    <h3>사용자에게 신선한 느낌으로 강력한 학교 홍보를 위한 유한대학교 3D 웹 사이트</h3>
+                    <h2>
+                        사용자에게&nbsp;&nbsp;
+                        <StrongText>신선한 느낌</StrongText>으로&nbsp;&nbsp; 
+                        <StrongText>강력한 학교 홍보</StrongText>를 위한&nbsp;&nbsp;
+                        <StrongText>유한대학교 3D 웹 사이트</StrongText>
+                        입니다.
+                    </h2>
                 </ProjectIntro>
                 <ProjectImageArea>
                     <ProjectImageItem>
@@ -39,41 +45,43 @@ const ProjectYuhanWeb = ({title}) => {
                     </ProjectImageItem>
                 </ProjectImageArea>
                 <TechStack>
-                    <div>
-                        <h2><FontAwesomeIcon icon={faCode} />My TechStack</h2>
-                    </div>
+                    <ItemHeader>
+                        <h2><FontAwesomeIcon icon={faCode} />&nbsp; Project TechStacks</h2>
+                    </ItemHeader>
                     <TechStackList>
                         <li>
-                            <span>Blender</span>
+                            <span title='3D Modeling SW'>Blender</span>
                         </li>
                         <li>
-                            <span>JavaScript</span>
+                            <span title='Programming Language'>JavaScript</span>
                         </li>
                         <li>
-                            <span>ReactJS</span>
+                            <span title='Library'>ReactJS</span>
                         </li>
                         <li>
-                            <span>Redux</span>
+                            <span title='State Management'>Redux</span>
                         </li>
                         <li>
-                            <span>Three.js</span>
+                            <span title='Library'>Three.js</span>
                         </li>
                         <li>
-                            <span>Node.js</span>
+                            <span title='JS Execution Environment'>Node.js</span>
                         </li>
                         <li>
-                            <span>MySQL</span>
+                            <span title='Database'>MySQL</span>
                         </li>
                     </TechStackList>
                 </TechStack>
                 <MyRole>
-                    <h3>나의 역할</h3>
+                    <ItemHeader>
+                        <h2><FontAwesomeIcon icon={faCode} />&nbsp; 나의 역할</h2>
+                    </ItemHeader>
                     <MyRoleList>
-                        <MyRoleItem><FontAwesomeIcon icon={faStar} /> 팀 리더, 프로젝트 기획 및 총괄</MyRoleItem>
+                        <MyRoleItem><FontAwesomeIcon icon={faStar} /> 팀 리더, &nbsp;프로젝트 기획 및 총괄</MyRoleItem>
                         <MyRoleItem><FontAwesomeIcon icon={faCode} /> 캐릭터 조작 기능 (+ 미니맵, 텔레포트 기능)</MyRoleItem>
-                        <MyRoleItem><FontAwesomeIcon icon={faCode} /> 항공뷰, 캠퍼스 안내뷰 기능</MyRoleItem>
+                        <MyRoleItem><FontAwesomeIcon icon={faCode} /> 항공뷰, &nbsp;캠퍼스 안내뷰 기능</MyRoleItem>
                         <MyRoleItem><FontAwesomeIcon icon={faCode} /> 학생 &nbsp;&nbsp;<FontAwesomeIcon icon={faArrowRightArrowLeft} style={{marginRight: 0}} />&nbsp;&nbsp; 교수 상담관리 기능</MyRoleItem>
-                        <MyRoleItem><FontAwesomeIcon icon={faFolderTree} /> 프로젝트 구조 및 UI 설계 및 디자인</MyRoleItem>
+                        <MyRoleItem><FontAwesomeIcon icon={faFolderTree} /> 프로젝트 구조 및 UI 설계, 디자인</MyRoleItem>
                     </MyRoleList>
                     <LinkArea>
                         <a href='https://github.com/yuhan19-plus/yuhan-interactive-web' target='_blank' className='hover-css'>
@@ -153,25 +161,29 @@ const ProjectImage = styled.img`
     border: 0.3rem solid var(--main-color);
     box-sizing: border-box;
     margin-right: 1rem;
+
+    &:hover {
+        
+    }
+`;
+
+const ItemHeader = styled.div`
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+        content: "";
+        padding: 0.1rem;
+        margin-right: 0.5rem;
+        background-color: var(--sub-color);
+    }
 `;
 
 const TechStack = styled.div`
     width: 100%;
     padding: 1rem;
     margin-bottom: 1rem;
-
-    div {
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    div::after {
-        content: "";
-        padding: 0.1rem;
-        margin-right: 0.5rem;
-        background-color: var(--sub-color);
-    }
 `;
 
 const TechStackList = styled.ul`
@@ -201,12 +213,8 @@ const TechStackList = styled.ul`
 
 const MyRole = styled.div`
     width: 100%;
-    height: 100%;
-
-    h3 {
-        font-size: 1.5rem;
-        margin-bottom: 0.3rem;
-    }
+    padding: 1rem;
+    margin-bottom: 1rem;
 `;
 
 const MyRoleList = styled.ul`
@@ -226,6 +234,11 @@ const LinkArea = styled.div`
     a {
         color: var(--sub-color);
     }
-`
+`;
+
+const StrongText = styled.span`
+    color: gold;
+    font-size: 1.7rem;  
+`;
 
 export default ProjectYuhanWeb;
