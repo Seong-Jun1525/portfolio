@@ -131,7 +131,11 @@ const AboutMe = () => {
                     </TechStack>
                 </InfoContainer>
                 <LinkArea>
-                    <a href='' onClick={handleMainContent}>프로젝트 보러가기&nbsp;&nbsp;<FontAwesomeIcon icon={faLocationArrow} /></a>
+                    <a href='' onClick={handleMainContent}>
+                        <span>
+                            프로젝트 보러가기&nbsp;&nbsp;<FontAwesomeIcon icon={faLocationArrow} />
+                        </span>
+                    </a>
                 </LinkArea>
             </AboutMeContainer>
         </AboutMeWrapper>
@@ -385,13 +389,33 @@ const LinkArea = styled.div`
     font-size: 1.5rem;
     margin-bottom: 1rem;
     padding: 1rem;
-
+    
     a {
         color: var(--sub-color);
-        transition: 0.3s ease-in-out;
     }
+
     a:hover {
-        font-size: 1.6rem;
+        span::after {
+            width: 100%;
+        }
+    }
+
+    span {
+        display: inline-block;
+        position: relative;
+    }
+
+    span::after {
+        content: "";
+        display: block;
+        width: 0%;
+        height: 0.1rem;
+        background-color: var(--sub-color);
+        position: absolute;
+        bottom: -0.2rem; /* 텍스트 아래 여유 공간 */
+        left: 50%; /* 중앙 시작 */
+        transform: translateX(-50%); /* 중앙 정렬 */
+        transition: width 0.3s ease;
     }
 `;
 

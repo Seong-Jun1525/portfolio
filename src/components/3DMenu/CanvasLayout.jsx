@@ -7,7 +7,7 @@ const CanvasLayout = ({children}) => {
     const sideContent = useSelector((state) => state.sideContent);
     // console.log(sideContent);
 
-    if (!sideContent) return null;
+    // if (!sideContent) return null;
 
     return (
         <Container>

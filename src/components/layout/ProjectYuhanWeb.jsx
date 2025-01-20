@@ -18,7 +18,7 @@ const ProjectYuhanWeb = ({title}) => {
     return (
         <Container>
             <SideContentHeader>
-                <h2>{title}</h2>
+                <h2>{title}<FontAwesomeIcon /></h2>
                 <p>24.03 ~ 24.11 4인 팀 프로젝트</p>
                 {/* handleBack()은 즉시 실행. 이벤트 핸들러는 참조형식으로 해야함. handleBack <- 참조형식 */}
                 <span onClick={handleBack}><FontAwesomeIcon icon={faClose} /></span>
@@ -28,19 +28,32 @@ const ProjectYuhanWeb = ({title}) => {
                     <h3>사용자에게 신선한 느낌으로 강력한 학교 홍보를 위한 유한대학교 3D 웹 사이트</h3>
                 </ProjectIntro>
                 <ProjectImageArea>
-                    <div style={{"backgroundColor": "yellow"}}>
-                        사진 영역
+                    <div>
+                        <ProjectImage src="../assets/images/project-yuhanweb/Main사진.png" alt="Main사진" />
                     </div>
-                    <div style={{"backgroundColor": "green"}}>
-                        사진 영역
+                    <div>
+                        <ProjectImage src="../assets/images/project-yuhanweb/Welcome존.png" alt="Welcome존" />
                     </div>
-                    <div style={{"backgroundColor": "blue"}}>
-                        사진 영역
+                    <div>
+                        <ProjectImage src="../assets/images/project-yuhanweb/상담신청.png" alt="상담신청" />
+                    </div>
+                    <div>
+                        <ProjectImage src="../assets/images/project-yuhanweb/키오스크 이벤트.png" alt="키오스크 이벤트" />
                     </div>
                 </ProjectImageArea>
                 <MyRole>
-
+                    <h3>나의 역할</h3>
+                    <ul>
+                        <li>팀 리더, 프로젝트 기획 및 총괄</li>
+                        <li>캐릭터 조작 기능 (+ 미니맵, 텔레포트 기능)</li>
+                        <li>항공뷰, 캠퍼스 안내뷰 기능</li>
+                        <li>학생 ↔ 교수 상담관리 기능</li>
+                        <li>프로젝트 구조 및 UI 설계 및 디자인</li>
+                    </ul>
                 </MyRole>
+                <LinkArea>
+                    <a href='https://github.com/yuhan19-plus/yuhan-interactive-web' target='_blank'>Github 저장소</a>
+                </LinkArea>
             </SideContentMain>
         </Container>
     );
@@ -73,7 +86,7 @@ const SideContentHeader = styled.div`
 
 const SideContentMain = styled.div`
     width: 100%;
-    height: 100%;
+    padding: 1rem;
 `;
 
 const ProjectIntro = styled.div`
@@ -82,10 +95,10 @@ const ProjectIntro = styled.div`
 
 const ProjectImageArea = styled.div`
     width: 100%;
-    height: 35%;
-    background-color: red;
+    height: 100%;
     padding: 1rem;
     display: flex;
+    flex-grow: 1;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
@@ -96,8 +109,18 @@ const ProjectImageArea = styled.div`
     }
 `;
 
-const MyRole = styled.div`
-    
+const ProjectImage = styled.img`
+    width: 100%;
+    height: 100%;
 `;
+
+const MyRole = styled.div`
+    width: 100%;
+    height: 100%;
+`;
+
+const LinkArea = styled.div`
+    
+`
 
 export default ProjectYuhanWeb;
